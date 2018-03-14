@@ -1,13 +1,32 @@
-<div class="row">
-  <div>
-      <a ui-sref="form.about" class="btn btn-block btn-danger">
-      Back <span class="glyphicon glyphicon-circle-arrow-right"></span>
-      </a>
-  </div>
+<h5> Let us know you better</h5>
 
-  <div>
-    <a ui-sref="preview" class="btn btn-block btn-danger" ng-click="processForm()" >
-      Preview <span class="glyphicon glyphicon-circle-arrow-right"></span>
-    </a>
+<div class="form-group">
+  <label>Twitter:</label>
+  <input class="form-control" type="text" ng-model="user.socials.twitter" name="twitter" />
+  <div ng-show="form.twitter.$untouched" class="input-invalid">
+    Optional
   </div>
 </div>
+
+<div class="form-group">
+  <label>Facebook:</label>
+  <input class="form-control" type="text" ng-model="user.socials.facebook" name="facebook" />
+  <div ng-show="form.facebook.$untouched" class="input-invalid">
+    Optional
+  </div>
+</div>
+
+<div class="form-group">
+  <label>Instagram:</label>
+  <input class="form-control" type="text" ng-model="user.socials.instagram" name="instagram" />
+  <div ng-show="form.instagram.$untouched" class="input-invalid">
+    Optional
+  </div>
+</div>
+
+<button ui-sref="form.about" type="button" class="btn btn-danger">Back</button>
+<button ui-sref="preview" ng-click="processForm()" type="button" class="btn btn-info">Preview</button>
+
+<!-- <a  class="btn btn-block btn-danger" ng-click="processForm()" >
+  Preview <span class="glyphicon glyphicon-circle-arrow-right"></span>
+</a> -->

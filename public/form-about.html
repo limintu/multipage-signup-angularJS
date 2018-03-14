@@ -1,28 +1,41 @@
 <h5> About you</h5>
 
-<label>Location:
-  <input type="text" ng-model="user.location" name="location" />
-</label><br />
-<label>Association:
-  <input type="text" ng-model="user.association" name="association"  placeholder="e.g. NBA, NFL"/>
-</label><br />
-<label>Team:
-  <input type="text" ng-model="user.team" name="team" />
-</label><br />
-<label>Sports:
-  <input type="checkbox" ng-model="user.sports" value="" />
-</label><br />
-
-<div class="row">
-  <div>
-      <a ui-sref="form.basic" class="btn btn-block btn-danger">
-      Back <span class="glyphicon glyphicon-circle-arrow-right"></span>
-      </a>
-  </div>
-
-  <div>
-      <a ui-sref="form.socialMedia" class="btn btn-block btn-info">
-      Next <span class="glyphicon glyphicon-circle-arrow-right"></span>
-      </a>
+<div class="form-group">
+  <label>Location:</label>
+  <input class="form-control" type="text" ng-model="user.location" name="location" required="" />
+  <div ng-show="user.location==undefined || form.location.$error.required" class="input-invalid">
+    Where is your current location.
   </div>
 </div>
+
+
+<div class="form-group">
+  <label>Association:</label>
+  <input class="form-control" type="text" ng-model="user.association" name="association"  placeholder="e.g. NBA, NFL" required=""/>
+  <div ng-show="user.association==undefined || form.association.$error.required" class="input-invalid">
+    Which assoiation are you in.
+  </div>
+</div>
+
+<div class="form-group">
+  <label>Sports:</label>
+  <select class="form-control" ng-model="user.sports" name="sports " multiple="" required="" >
+    <option ng-repeat="sport in options" value="{{sport}}">
+      {{sport}}
+    </option>
+  </select>
+  <div ng-show="user.sports==undefined || form.sports.$error.required" class="input-invalid">
+    What do you play.
+  </div>
+</div>
+
+<div class="form-group">
+<label>Team:</label>
+  <input class="form-control" type="text" ng-model="user.team" name="team" />
+  <div ng-show="user.team==undefined" class="input-invalid">
+    Are you belong to any team. (Optional)
+  </div>
+</div>
+
+<button ui-sref="form.basic" type="button" class="btn btn-danger">Back</button>
+<button ng-click="goToSocialMedia()" type="button" class="btn btn-info">Next</button>

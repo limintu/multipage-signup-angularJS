@@ -1,7 +1,7 @@
 <!-- form.html -->
 <div>
   <div class="row" >
-    <h2>Tell Me About You</h2>
+    <h2>Your Information</h2>
   </div>
 
   <div class="row">
@@ -15,13 +15,22 @@
   </div>
   <div class="row">
       <!-- use ng-submit to catch the form submission and use our Angular function -->
-      <form id="signup-form">
+      <form name="form" novalidate>
 
           <!-- our nested state views will be injected here -->
           <div ui-view></div>
       </form>
   </div>
 </div>
+
+<style type="text/css">
+/* input.ng-untouched, input.ng-invalid, select.ng-untouched, select.ng-invalid {
+  border-color:
+} */
+.input-invalid {
+  color: #FA787E;
+}
+</style>
 
   <!-- </div> -->
 

@@ -1,28 +1,44 @@
 <h5> Basic Info</h5>
+
 <div class="form-group">
   <label>Name:</label>
-  <input type="text" ng-model="user.name" />
+  <input class="form-control" type="text" ng-model="user.name" name="name" required="" />
+  <div ng-show="user.name==undefined || form.name.$error.required" class="input-invalid">
+    Tell us your name.
+  </div>
 </div>
 
 <div class="form-group">
   <label>Date of Birth:</label>
-  <input type="date" ng-model="user.dob" name="dob" />
+  <input class="form-control" type="date" ng-model="user.dob" name="dob" required="" />
+  <div ng-show="user.dob==undefined  || form.dob.$invalid" class="input-invalid">
+    Not valid date.
+  </div>
 </div>
 
-<div class="form-group">
+<div class="form-group" ng-init="user.gender='female'">
   <label>Gender:</label>
-    <input type="radio" ng-model="user.gender" name="gender" value="female" checked> <label> Female</label>
-    <input type="radio" ng-model="user.gender" name="gender" value="male" > <label> Male</label>
+  <div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" ng-model="user.gender" name="gender" value="female">
+    <label class="form-check-label" for="inlineRadio1">Female</label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" ng-model="user.gender" name="gender" value="male" >
+    <label class="form-check-label" for="inlineRadio1">Male</label>
+  </div>
+  </div>
 </div>
 
 <div class="form-group">
   <label>Nationality:</label>
-  <input type="text" ng-model="user.nationality" name="nationality" />
+  <select class="form-control" ng-model="user.nationality" name="nationality"required="" />
+    <option value="" disabled>Please select</option>
+    <option ng-repeat="country in countries" value="{{country.name}}"> {{country.name}} </option>
+  </select>
+  <div ng-show="user.nationality==undefined " class="input-invalid">
+    Where are you from.
+  </div>
 </div>
 
-
-  <div>
-      <a ui-sref="form.about" class="btn btn-block btn-info">
-      Next <span class="glyphicon glyphicon-circle-arrow-right"></span>
-      </a>
-  </div>
+<button ng-click="goToAbout()" type="button" class="btn btn-info">Next</button>

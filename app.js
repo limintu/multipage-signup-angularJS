@@ -40,12 +40,21 @@ app.get('/', function(req, res) {
 });
 
 app.post('/submit', function(req, res) {
-  console.log(req.body);
+  // console.log(req.body);
+
   data = req.body;
   let athlete = new Athlete();
 
   for (let key in data) {
     athlete[key] = data[key];
+  }
+
+
+  if (Object.keys(data).length === 0) {
+    // console.log("None!!!!");
+
+    res.send("User data saved.");
+    return;
   }
 
   athlete.save(function(err) {
@@ -71,15 +80,14 @@ app.get('/clients', function(req, res) {
 });
 
 app.get('/client/:id', function(req, res) {
-  console.log(req.params.id);
+  // console.log(req.params.id);
+
   Athlete.findById(req.params.id, '-_id -__v', function(err, data) {
     if (err) {
       console.log(err);
       return;
     }
 
-    data.dob = JSON.stringify(data.dob).substring(0, 10);
-    console.log((data.dob));
     // console.log(typeof(data.dob));
     res.render('client', {
       data: JSON.stringify(data)

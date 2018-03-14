@@ -3,11 +3,12 @@ let mongoose = require('mongoose');
 let athleteSchema = mongoose.Schema({
   name: String,
   dob: Date,
+  gender: String,
   nationality: String,
   location: String,
   association: String,
   team: String,
-  gender: String,
+  sports: [],
   about: String
 });
 
