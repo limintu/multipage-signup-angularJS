@@ -1,0 +1,22 @@
+<table>
+  <tr ng-repeat="(k, v) in previewUser">
+    <td>{{ k }}: </td>
+    <td>{{ v }}</td>
+  </tr>
+</table>
+<div>
+  <a ui-sref="form.basic" class="btn btn-block btn-danger" ng-click="restoreData() ">
+    Edit Basic
+  </a>
+</div>
+
+<div>
+  <a ui-sref="form.about" class="btn btn-block btn-danger" ng-click="restoreData() ">
+    Edit About
+  </a>
+</div>
+
+
+<a class="btn btn-block btn-danger" ng-click="onSubmit()" >
+  Submit <span class="glyphicon glyphicon-circle-arrow-right"></span>
+</a>

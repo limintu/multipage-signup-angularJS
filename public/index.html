@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- load bootstrap from CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+
+    <!-- load angular and angular route -->
+    <script src="js/angular/angular.js"></script>
+    <script src="js/angular-ui-router/release/angular-ui-router.js"></script>
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.js"></script> -->
+    <script src="js/core.js"></script>
+  </head>
+  <body ng-app="athleteApp">
+    <div class="container" >
+
+      <!-- <ui-view> -->
+      <div ui-view></div>
+
+
+      <!-- <form novalidate class="simple-form" action="/" method="post">
+        <label>About:
+          <textarea ng-model="user.about" name="about"></textarea>
+        </label><br /> -->
+    </div>
+        <!-- <input type="button" ng-click="reset()" value="Reset" />
+        <input type="submit" ng-click="update(user)" value="Save" /> -->
+      <!-- <pre>master = {{master | json}}</pre> -->
+
+<!--
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '230505050855108',
+          cookie     : true,
+          xfbml      : true,
+          version    : 'v2.12'
+        });
+
+        FB.AppEvents.logPageView();
+
+        FB.getLoginStatus(function(response) {
+          if (response.status === 'connected') {
+            console.log('Logged in.');
+          }
+          else {
+            FB.login();
+          }
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+
+
+    </script> -->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
